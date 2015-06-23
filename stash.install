@@ -1,0 +1,10 @@
+post_install() {
+	if ! getent passwd stash > /dev/null; then
+		useradd -r stash
+	fi
+	chown -R stash:stash '/opt/atlassian-stash'
+}
+
+post_upgrade() {
+	chown -R stash:stash '/opt/atlassian-stash'
+}
