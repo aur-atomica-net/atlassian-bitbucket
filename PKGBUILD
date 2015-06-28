@@ -2,7 +2,7 @@
 # Based on atlassian-jira: https://aur.archlinux.org/packages/atlassian-jira/
 
 pkgname=atlassian-stash
-pkgver=3.10.0
+pkgver=3.10.2
 pkgrel=1
 pkgdesc="On-premise source code management for Git that's secure, fast, and enterprise grade."
 url="https://www.atlassian.com/software/stash"
@@ -17,7 +17,7 @@ install='stash.install'
 source=("https://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-${pkgver}.tar.gz"
         'stash.conf.d'
         'stash.service')
-sha256sums=('ab7fecb10e6650fb5b94a20b22463771d7ab0f69a0971272d1a066dd2430f048'
+sha256sums=('2597e9954397af5016c30c9f90befd09c6da71c4e7745813c77e60329427989e'
             '5a6a87f08d78587d8202ecf15abcfdc0e6e77533566dd093c2b246b110bb971c'
             'ed3a0f928b956ab7427ffb7c44fcbb93522b168073e44670e7f62002fb7c9e7c')
 
