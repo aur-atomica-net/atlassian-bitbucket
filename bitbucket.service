@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=forking
 User=bitbucket
-EnvironmentFile=-/etc/conf.d/atlassian-bitbucket
+EnvironmentFile=-/etc/conf.d/bitbucket
 ExecStart=/opt/atlassian-bitbucket/bin/startup.sh
 ExecStop=/opt/atlassian-bitbucket/bin/shutdown.sh
 
