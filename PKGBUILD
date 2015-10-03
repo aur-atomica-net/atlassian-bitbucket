@@ -3,7 +3,7 @@
 
 pkgname=atlassian-bitbucket
 pkgver=4.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="On-premise source code management for Git that's secure, fast, and enterprise grade."
 url="https://www.atlassian.com/software/bitbucket"
 license=('custom')
@@ -19,7 +19,7 @@ source=("https://www.atlassian.com/software/stash/downloads/binary/atlassian-bit
         'bitbucket.conf.d'
         'bitbucket.service')
 sha256sums=('f59462077fa4ccc522b7bbf1ad6ebef4753cd0e41abf54bc0491d07eea40593d'
-            'ce1d7520e3e49e9c4f1e03ed3836339d47f8c7dc3e2734450cded6abf1a99fc0'
+            '21f68198f0339463a9816bb46766df71f50cb388cf176c4af8519d4e1010b561'
             '5f0a6db521caf9af4026dadd25c0927aa05dbd83c090b3940940d97ab6422714')
 
 package() {
