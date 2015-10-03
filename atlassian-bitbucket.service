@@ -1,0 +1,13 @@
+[Unit]
+Description=Atlassian Bitbucket
+After=network.target
+
+[Service]
+Type=forking
+User=bitbucket
+EnvironmentFile=-/etc/conf.d/atlassian-bitbucket
+ExecStart=/opt/atlassian-bitbucket/bin/startup.sh
+ExecStop=/opt/atlassian-bitbucket/bin/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target

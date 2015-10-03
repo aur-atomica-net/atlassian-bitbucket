@@ -1,0 +1,12 @@
+post_install() {
+	if ! getent passwd bitbucket > /dev/null; then
+		useradd -r bitbucket
+	fi
+    chown -R bitbucket:bitbucket '/opt/atlassian-bitbucket'
+    chown -R bitbucket:bitbucket '/var/lib/atlassian-bitbucket'
+}
+
+post_upgrade() {
+    chown -R bitbucket:bitbucket '/opt/atlassian-bitbucket'
+    chown -R bitbucket:bitbucket '/var/lib/atlassian-bitbucket'
+}

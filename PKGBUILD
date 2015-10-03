@@ -1,39 +1,40 @@
 # Maintainer: Jason R. McNeil <jason@jasonrm.net>
 # Based on atlassian-jira: https://aur.archlinux.org/packages/atlassian-jira/
 
-pkgname=atlassian-stash
-pkgver=3.10.2
+pkgname=atlassian-bitbucket
+pkgver=4.0.1
 pkgrel=1
 pkgdesc="On-premise source code management for Git that's secure, fast, and enterprise grade."
-url="https://www.atlassian.com/software/stash"
+url="https://www.atlassian.com/software/bitbucket"
 license=('custom')
 arch=('any')
 depends=('java-environment>=7', 'java-runtime-jre>=7')
 optdepends=('mysql-connector: connect to MySQL'
             'libcups: used by bin/config.sh'
             'fontconfig: used by bin/config.sh')
-backup=('etc/conf.d/stash')
-install='stash.install'
-source=("https://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-${pkgver}.tar.gz"
-        'stash.conf.d'
-        'stash.service')
-sha256sums=('2597e9954397af5016c30c9f90befd09c6da71c4e7745813c77e60329427989e'
-            '5a6a87f08d78587d8202ecf15abcfdc0e6e77533566dd093c2b246b110bb971c'
-            'ed3a0f928b956ab7427ffb7c44fcbb93522b168073e44670e7f62002fb7c9e7c')
+backup=('etc/conf.d/atlassian-bitbucket')
+install='atlassian-bitbucket.install'
+replaces=('atlassian-stash')
+source=("https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${pkgver}.tar.gz"
+        'atlassian-bitbucket.conf.d'
+        'atlassian-bitbucket.service')
+sha256sums=('f59462077fa4ccc522b7bbf1ad6ebef4753cd0e41abf54bc0491d07eea40593d'
+            'ce1d7520e3e49e9c4f1e03ed3836339d47f8c7dc3e2734450cded6abf1a99fc0'
+            '4f3cb183c1cd8749dc700458909d05f4ef872f72a2eefe0709a33ba983605c94')
 
 package() {
   cd "${srcdir}"
-  mkdir -p "${pkgdir}/opt/atlassian-stash/"
-  cp -r "${srcdir}/atlassian-stash-$pkgver/"* "${pkgdir}/opt/atlassian-stash/"
+  mkdir -p "${pkgdir}/opt/atlassian-bitbucket/"
+  cp -r "${srcdir}/atlassian-bitbucket-$pkgver/"* "${pkgdir}/opt/atlassian-bitbucket/"
 
   # remove unneeded *.bat files
-  find "${pkgdir}/opt/atlassian-stash/bin" -name '*.bat' -type f -exec rm "{}" \;
+  find "${pkgdir}/opt/atlassian-bitbucket/bin" -name '*.bat' -type f -exec rm "{}" \;
 
-  # Stash Home
-  install -dm755 "${pkgdir}/var/lib/atlassian-stash"
+  # Bitbucket Home
+  install -dm755 "${pkgdir}/var/lib/atlassian-bitbucket"
 
-  # Setup systemd service
+  # Setup systemd service and configuration
   install -dm755 "${pkgdir}/usr/lib/systemd/system"
-  install -Dm644 "${srcdir}/stash.service" "${pkgdir}/usr/lib/systemd/system"
-  install -Dm644 "${srcdir}/stash.conf.d" "${pkgdir}/etc/conf.d/stash"
+  install -Dm644 "${srcdir}/atlassian-bitbucket.service" "${pkgdir}/usr/lib/systemd/system"
+  install -Dm644 "${srcdir}/atlassian-bitbucket.conf.d" "${pkgdir}/etc/conf.d/atlassian-bitbucket"
 }
