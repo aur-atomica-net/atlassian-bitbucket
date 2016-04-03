@@ -2,7 +2,7 @@
 # Based on atlassian-jira: https://aur.archlinux.org/packages/atlassian-jira/
 
 pkgname=atlassian-bitbucket
-pkgver=4.4.1
+pkgver=4.4.2
 pkgrel=1
 pkgdesc="On-premise source code management for Git that's secure, fast, and enterprise grade."
 url="https://www.atlassian.com/software/bitbucket"
@@ -18,7 +18,7 @@ replaces=('atlassian-stash')
 source=("https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${pkgver}.tar.gz"
         'bitbucket.conf.d'
         'bitbucket.service')
-sha256sums=('91866f21cf13a9eb9f490b85b7e878d5283038f4824c66e97bdd92867c363c22'
+sha256sums=('050e31d88da4cfd6715834fc5a48ec8977f461f0fac7899c602a75e251952be4'
             '21f68198f0339463a9816bb46766df71f50cb388cf176c4af8519d4e1010b561'
             '5f0a6db521caf9af4026dadd25c0927aa05dbd83c090b3940940d97ab6422714')
 
