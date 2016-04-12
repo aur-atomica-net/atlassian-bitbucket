@@ -8,7 +8,7 @@ pkgdesc="On-premise source code management for Git that's secure, fast, and ente
 url="https://www.atlassian.com/software/bitbucket"
 license=('custom')
 arch=('any')
-depends=('java-environment>=7', 'java-runtime-jre>=7')
+depends=('java-environment>=7')
 optdepends=('mysql-connector: connect to MySQL'
             'libcups: used by bin/config.sh'
             'fontconfig: used by bin/config.sh')
